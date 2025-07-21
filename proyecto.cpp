@@ -124,6 +124,7 @@ void eliminarAnimal(Animal animales[], int &n) {
     if (pos >= 1 && pos < n) {
         for (int i = pos; i < n - 1; i++)
             animales[i] = animales[i + 1];
+            n--;
         cout << "Eliminado.\n";
     } else {
         cout << "ID inválido.\n";
