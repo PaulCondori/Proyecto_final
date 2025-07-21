@@ -41,7 +41,18 @@ void agregarAnimal(Animal animales[], int &n) {
     cin.ignore();
     cout << "Habitat: ";
     getline(cin, animales[n].habitat);
-    // Agregar el resto lo de veterinario y dieta eh
+    cout << "Nombre del veterinario encargado: ";
+    getline(cin, animales[n].encargado.nombre);
+    cout << "Anios de experiencia del veterinario: ";
+    cin >> animales[n].encargado.anios_exp;
+    cout << "Tipo de alimento: ";
+    cin.ignore();
+    getline(cin, animales[n].alimentacion.tipo_alimento);
+    cout << "Cantidad diaria (en gramos): ";
+    cin >> animales[n].alimentacion.cantidad_diaria;
+    cin.ignore();
+    cout << "Frecuencia de alimentacion: ";
+    getline(cin, animales[n].alimentacion.frecuencia);
     n++;
 }
 
