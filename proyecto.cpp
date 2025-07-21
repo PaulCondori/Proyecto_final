@@ -142,7 +142,50 @@ void buscarPorNombre(const Animal animales[], int n, const string& nombre) {
 }
 
 int main() {
-    // Aqui implementaremos todo
+        Animal animales[MAX];
+    int n = 1;
+    int opcion;
+
+    do {
+        cout << "--------- MENU DEL ZOOLOGICO ---------" << endl;
+        cout << "1. Agregar un animal\n";
+        cout << "2. Modificar un animal\n";
+        cout << "3. Mostrar todos los animales\n";
+        cout << "4. Eliminar un animal\n";
+        cout << "5. Buscar animal por nombre\n";
+        cout << "0. Salir\n";
+        cout << "Seleccione una opcion valida: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                agregarAnimal(animales, n);
+                break;
+            case 2:
+                modificarAnimal(animales, n);
+                break;
+            case 3:
+                mostrarAnimales(animales, n);
+                break;
+            case 4:
+                eliminarAnimal(animales, n);
+                break;
+            case 5: {
+                string nombre;
+                cin.ignore();
+                cout << "Ingrese el nombre del animal a buscar: ";
+                getline(cin, nombre);
+                buscarPorNombre(animales, n, nombre);
+                break;
+            }
+            case 0:
+                cout << "Saliendo del programa...\n";
+                break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente.\n";
+        }
+    } while (opcion != 0);
+    
     return 0;
 }
 
