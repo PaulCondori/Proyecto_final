@@ -26,8 +26,12 @@ struct Animal {
 };
 
 void agregarAnimal(Animal animales[], int &n) {
-    if (n >= MAX) return;
-
+    if (n >= MAX) {
+        cout << "Nose pueden agregar más animales.\n";
+        return;
+    }
+    cin.ignore();
+    
     cout << "Nombre del animal: ";
     getline(cin, animales[n].nombre);
     cout << "Especie: ";
