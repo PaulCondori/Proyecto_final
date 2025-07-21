@@ -116,6 +116,30 @@ void mostrarAnimales(const Animal animales[], int n) {
     }
     system("pause");
 }
+
+void eliminarAnimal(Animal animales[], int &n) {
+    int pos;
+    cout << "ID a eliminar: ";
+    cin >> pos;
+    if (pos >= 1 && pos < n) {
+        for (int i = pos; i < n - 1; i++)
+            animales[i] = animales[i + 1];
+        cout << "Eliminado.\n";
+    } else {
+        cout << "ID inválido.\n";
+    }
+}
+
+void buscarPorNombre(const Animal animales[], int n, const string& nombre) {
+    for (int i = 1; i < n; i++) {
+        if (animales[i].nombre == nombre) {
+            cout << "Encontrado en ID " << i << endl;
+            return;
+        }
+    }
+    cout << "No encontrado.\n";
+}
+
 int main() {
     // Aqui implementaremos todo
     return 0;
