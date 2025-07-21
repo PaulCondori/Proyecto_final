@@ -27,7 +27,6 @@ struct Animal {
 
 void agregarAnimal(Animal animales[], int &n) {
     if (n >= MAX) return;
-    cin.ignore();
 
     cout << "Nombre del animal: ";
     getline(cin, animales[n].nombre);
@@ -41,6 +40,7 @@ void agregarAnimal(Animal animales[], int &n) {
     cin.ignore();
     cout << "Habitat: ";
     getline(cin, animales[n].habitat);
+
     cout << "Nombre del veterinario encargado: ";
     getline(cin, animales[n].encargado.nombre);
     cout << "Anios de experiencia del veterinario: ";
@@ -53,12 +53,45 @@ void agregarAnimal(Animal animales[], int &n) {
     cin.ignore();
     cout << "Frecuencia de alimentacion: ";
     getline(cin, animales[n].alimentacion.frecuencia);
+
     n++;
 }
 
+void modificarAnimal(Animal animales[], int n) {
+    int pos;
+    cout << "Ingrese el ID del animal a modificar: ";
+    cin >> pos;
+    if (pos >= 1 && pos < n) {
+        cin.ignore();
+        cout << "Nuevo nombre: ";
+        getline(cin, animales[pos].nombre);
+
+        cout << "Nueva especie: ";
+        getline(cin, animales[pos].especie);
+
+        cout << "Nuevo sexo (M/H): ";
+        cin >> animales[pos].sexo;
+
+        cout << "Nueva edad: ";
+        cin >> animales[pos].edad;
+        cin.ignore();
+
+        cout << "Nuevo habitat: ";
+        getline(cin, animales[pos].habitat);
+
+        cout << "Nuevo nombre del veterinario: ";
+        getline(cin, animales[pos].encargado.nombre);
+
+        cout << "Nuevos anios de experiencia: ";
+        cin >> animales[pos].encargado.anios_exp;
+        cin.ignore();
+    } else {
+        cout << "ID invalido. " << endl;
+    }
+}
 
 int main() {
-    // Aui implementaremos todo
+    // Aqui implementaremos todo
     return 0;
 }
 
