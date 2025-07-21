@@ -77,6 +77,32 @@ void modificarAnimal(Animal animales[], int n) {
     }
 }
 
+void mostrarAnimales(const Animal animales[], int n) {
+    if (n == 0) {
+        cout << "No hay animales registrados. " << endl;
+        return;
+    }
+    for (int i = 1; i < n; i++) {
+        cout << "---------------\n";
+        cout << "\nAnimal #" << i << ":\n";
+        cout << "Nombre: " << animales[i].nombre << endl;
+        cout << "Especie: " << animales[i].especie << endl;
+        cout << "Sexo: " << animales[i].sexo << endl;
+        cout << "Edad: " << animales[i].edad << " a os\n";
+        cout << "Habitat: " << animales[i].habitat << endl;
+        cout << "---------------\n";
+        cout << "Veterinario encargado:\n";
+        cout << "Nombre: " << animales[i].encargado.nombre << endl;
+        cout << "Anios de experiencia: " << animales[i].encargado.anios_exp << endl;
+        cout << "---------------\n";
+        cout << "Dieta:\n";
+        cout << "Tipo de alimento: " << animales[i].alimentacion.tipo_alimento << endl;
+        cout << "Cantidad diaria: " << animales[i].alimentacion.cantidad_diaria << " g\n";
+        cout << "Frecuencia: " << animales[i].alimentacion.frecuencia << endl;
+        cout << "---------------\n";
+    }
+    system("pause");
+}
 int main() {
     // Aqui implementaremos todo
     return 0;
